@@ -4,6 +4,20 @@
 
 ![image alt text](banner.png)
 
+* [Getting Started with Sovrin](#getting-started-with-sovrin)
+  * [What Sovrin Is, and Why it Matters](#what-sovrin-is-and-why-it-matters)
+  * [What We'll Cover](#what-well-cover)
+  * [Alice Gets a Transcript](#alice-gets-a-transcript)
+  * [Install Sovrin](#install-sovrin)
+  * [Evaluate the Invitation](#evaluate-the-invitation)
+  * [Accept the Invitation](#accept-the-invitation)
+  * [Test Secure Interaction](#test-secure-interaction)
+  * [Apply for a Job](#apply-for-a-job)
+  * [Apply for a Loan](#apply-for-a-loan)
+* [Appendix](#appendix)
+  * [Faber College Configures Transcripts](#faber-college-configures-transcripts)
+  * [Acme Corp Defines a Job-Application](#acme-corp-defines-a-job-application)
+  
 ## What Sovrin is, and Why it Matters
 
 Sovrin is a software ecosystem for private, secure, and powerful identity. It puts people — not the organizations that traditionally centralize identity — in charge of decisions about their own privacy and disclosure. This enables all kinds of rich innovation: link contracts, revocation, novel payment workflows, asset and document management features, creative forms of escrow, curated reputation, integrations with other cool technologies, and so on.
@@ -254,7 +268,7 @@ Attempting to sync...
 Synchronizing...
     Link Faber College synced
 
-Pinging target endpoint: ('127.0.0.1', 5555)
+Pinging target endpoint: ('54.70.102.199', 5555)
     Ping sent.
     Pong received.
 
@@ -289,7 +303,7 @@ Link
     Signing key: <hidden>
     Target: FuN98eH2eZybECWkofW6A9BKJxxnTatBCopfUiNxo6ZB
     Target Verification key: <same as target>
-    Target endpoint: 127.0.0.1:5555
+    Target endpoint: 54.70.102.199:5555
     Invitation nonce: b1134a647eb818069c089e7694f63e6d
     Invitation status: Accepted
     Available Claim(s): Transcript
@@ -312,7 +326,7 @@ At this point Alice is connected to Faber College, and can interact in a secure 
 ALICE> ping Faber
 Expanding Faber to "Faber College"
 
-Pinging target endpoint: ('127.0.0.1', 5555)
+Pinging target endpoint: ('54.70.102.199', 5555)
     Ping sent.
     Pong received.
 ```
@@ -389,7 +403,7 @@ Attributes:
     degree: Bachelor of Science, Marketing
 ```
 
-# Apply for a job
+# Apply for a Job
 
 Alice would like to work for Acme Corp. Normally she would browse to acmecorp.com, where she would click on a hyperlink to apply for a job. Her browser would download a link invitation which her Sovrin app would open; this would trigger a prompt to Alice, asking her to accept the link with Acme Corp. Because we’re using a CLI, the interface is different, but the steps are the same. We do approximately the same things that we did when Alice was accepting Faber College’s link invitation:
 
@@ -400,7 +414,7 @@ ALICE> show sample/acme-job-application.sovrin
     "name": "Acme Corp",
     "identifier": "7YD5NKn3P4wVJLesAmA1rr7sLPqW9mR1nhFdKD518k21",
     "nonce": "57fbf9dc8c8e6acde33de98c6d747b28c",
-    "endpoint": "127.0.0.1:1213"
+    "endpoint": "54.70.102.199:6666"
   },
   "claim-requests": [{
     "name": "Job-Application",
@@ -445,7 +459,7 @@ Link (not yet accepted)
     Signing key: <hidden>
     Target: 7YD5NKn3P4wVJLesAmA1rr7sLPqW9mR1nhFdKD518k21
     Target Verification key: <unknown, waiting for sync>
-    Target endpoint: 127.0.0.1:1213
+    Target endpoint: 54.70.102.199:6666
     Invitation nonce: 57fbf9dc8c8e6acde33de98c6d747b28c
     Invitation status: not verified, target verkey unknown
     Claim Requests: Job-Application
@@ -465,7 +479,7 @@ Attempting to sync...
 Synchronizing...
     Link Acme Corp synced
 
-Pinging target endpoint: ('127.0.0.1', 6666)
+Pinging target endpoint: ('54.70.102.199', 6666)
     Ping sent.
     Pong received.
 
@@ -580,7 +594,7 @@ Link
     Signing key: <hidden>
     Target: 7YD5NKn3P4wVJLesAmA1rr7sLPqW9mR1nhFdKD518k21
     Target Verification key: <same as target>
-    Target endpoint: 127.0.0.1:6666
+    Target endpoint: 54.70.102.199:6666
     Invitation nonce: 57fbf9dc8c8e6acde33de98c6d747b28c
     Invitation status: Accepted
     Claim Request(s): Job-Application
@@ -592,7 +606,7 @@ Try Next:
     show claim request "<claim-request-name>"
 ```
 
-## Apply for a loan
+## Apply for a Loan
 
 Now that Alice has a job, she’d like to apply for a loan. That will require proof of employment. She can get this from the Job-Certificate claim offered by Acme. Alice goes through a familiar sequence of interactions. First she inspects the claim:
 
@@ -672,7 +686,7 @@ Attempting to sync...
 Synchronizing...
     Link Thrift Bank synced
 
-Pinging target endpoint: ('127.0.0.1', 7777)
+Pinging target endpoint: ('54.70.102.199', 7777)
     Ping sent.
     Pong received.
 
