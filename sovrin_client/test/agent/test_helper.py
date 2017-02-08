@@ -7,7 +7,7 @@ from sovrin_client.test.agent.bulldog_helper import bulldogLogger
 from sovrin_common.config import agentLoggingLevel
 
 
-def test_loggerLevelSuccess(tdir):
+def testLoggerLevelSuccess(tdir):
     logger = bulldogLogger
     filePath = '{}/bulldog_test.log'.format(tdir)
     formatter = logging.Formatter('%(asctime)s %(message)s')
@@ -29,7 +29,7 @@ def test_loggerLevelSuccess(tdir):
         assert True
 
 
-def test_loggerLevelError(tdir):
+def testLoggerLevelError(tdir):
     logger = bulldogLogger
     logger.setLevel(logging.DEBUG)
     filePath = '{}/bulldog_test_fail.log'.format(tdir)
